@@ -7,6 +7,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Bead_2024;
+using System.Runtime.InteropServices;
 //using MySql.Data.MySqlClient;
 
 namespace Beadando_Szenzorhalozat
@@ -43,6 +45,9 @@ namespace Beadando_Szenzorhalozat
     }
     internal class Program
     {
+        [DllImport("adatok.dll")]
+        static List<SzenzorLibrary> szenzorlist = new List<SzenzorLibrary>();
+
         public delegate void JSONWriteHandler(EventArgs e);
         public static JSONWriteHandler JSON_FILE;
         static void FileWrittenHandler(EventArgs e)
@@ -69,6 +74,18 @@ namespace Beadando_Szenzorhalozat
                         int tartalyszint = int.Parse(parts[4]);
 
                         list.Add(new Sensorok(azon, homerseklet, paratartalom, folyoszint, tartalyszint));
+
+                        //Adatok behelyezése az adatbázisba
+                        /*SzenzorLibrary sz = new SzenzorLibrary
+                        {
+                            azon = azon,
+                            hom = homerseklet,
+                            para = paratartalom,
+                            folyoszint = folyoszint,
+                            tartalyszint = tartalyszint
+                        };
+
+                        Beszur(null, sz);*/
                     }
                 }
                 foreach (var sensorok in list) //ellenőrzés képpen
@@ -186,5 +203,10 @@ namespace Beadando_Szenzorhalozat
                 }
             }
         }*/
+        public static void Beszur(object sender, SzenzorLibrary sz)
+        {
+            szenzorlist.Add(sz);
+            Adatbazis(sz.azon, sz.para, sz.hom, sz.folyoszint, sz.tartalyszint);
+        }
     }
 }
