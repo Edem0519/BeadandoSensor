@@ -85,7 +85,7 @@ namespace Beadando_Szenzorhalozat
                             tartalyszint = tartalyszint
                         };
 
-                        Beszur(null, sz);
+                        //Beszur(null, sz);
                     }
                 }
                 foreach (var sensorok in list) //ellenőrzés képpen
@@ -185,7 +185,7 @@ namespace Beadando_Szenzorhalozat
 
         }
 
-        public static void Adatbazis(int azon, int para, int hom, int folyoszint, int tartalyszint)//TZS
+        /*public static void Adatbazis(int azon, int para, int hom, int folyoszint, int tartalyszint)//TZS
         {
             string kapcsolodas = "server=localhost;database=szenzorhalozat;user=root;password=root;";
             using (var kapcsolo = new MySqlConnection(kapcsolodas))
@@ -202,13 +202,13 @@ namespace Beadando_Szenzorhalozat
                     parancsok.Parameters.AddWithValue("@tartalyszint", tartalyszint);
                 }
             }
-        }
+        }*/
         //NEM JÓ A GIT!!!!
         //Most már lehet jó lesz a git
-        public static void Beszur(object sender, SzenzorLibrary sz)
+        /*public static void Beszur(object sender, SzenzorLibrary sz)
         {
             szenzorlist.Add(sz);
             Adatbazis(sz.azon, sz.para, sz.hom, sz.folyoszint, sz.tartalyszint);
-        }
+        }*/
     }
 }
