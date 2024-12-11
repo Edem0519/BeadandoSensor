@@ -45,7 +45,7 @@ namespace Beadando_Szenzorhalozat
     }
     internal class Program
     {
-        //[DllImport("adatok.dll")]
+        
         static List<SzenzorLibrary> szenzorlist = new List<SzenzorLibrary>();
 
         public delegate void JSONWriteHandler(EventArgs e);
