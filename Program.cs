@@ -7,7 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
 
 namespace Beadando_Szenzorhalozat
 {
@@ -71,10 +71,10 @@ namespace Beadando_Szenzorhalozat
                         list.Add(new Sensorok(azon, homerseklet, paratartalom, folyoszint, tartalyszint));
                     }
                 }
-                /*foreach (var sensorok in list) //ellenőrzés képpen
+                foreach (var sensorok in list) //ellenőrzés képpen
                 {
                     Console.WriteLine(sensorok);
-                }*/
+                }
             }
         }//fájl-ból beolvasás
         static void JSON()
@@ -168,7 +168,7 @@ namespace Beadando_Szenzorhalozat
 
         }
 
-        public static void Adatbazis(string azon, int para, int hom, int folyoszint, int tartalyszint)//TZS
+        /*public static void Adatbazis(string azon, int para, int hom, int folyoszint, int tartalyszint)//TZS
         {
             string kapcsolodas = "server=localhost;database=szenzorhalozat;user=root;password=root;";
             using (var kapcsolo = new MySqlConnection(kapcsolodas))
@@ -185,6 +185,6 @@ namespace Beadando_Szenzorhalozat
                     parancsok.Parameters.AddWithValue("@tartalyszint", tartalyszint);
                 }
             }
-        }
+        }*/
     }
 }
