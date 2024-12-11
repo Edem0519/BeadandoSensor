@@ -45,7 +45,7 @@ namespace Beadando_Szenzorhalozat
     }
     internal class Program
     {
-        [DllImport("adatok.dll")]
+        //[DllImport("adatok.dll")]
         static List<SzenzorLibrary> szenzorlist = new List<SzenzorLibrary>();
 
         public delegate void JSONWriteHandler(EventArgs e);
@@ -203,10 +203,10 @@ namespace Beadando_Szenzorhalozat
                 }
             }
         }*/
-        public static void Beszur(object sender, SzenzorLibrary sz)
+        /*public static void Beszur(object sender, SzenzorLibrary sz)
         {
             szenzorlist.Add(sz);
             Adatbazis(sz.azon, sz.para, sz.hom, sz.folyoszint, sz.tartalyszint);
-        }
+        }*/
     }
 }
