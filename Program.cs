@@ -203,6 +203,7 @@ namespace Beadando_Szenzorhalozat
                 }
             }
         }*/
+        //NEM JÓ A GIT!!!!
         /*public static void Beszur(object sender, SzenzorLibrary sz)
         {
             szenzorlist.Add(sz);
