@@ -31,7 +31,7 @@ namespace Bead_2024
 
         public void Adat()
         {
-            Esemeny.Invoke(this, new SzenzorLibrary
+            Esemeny?.Invoke(this, new SzenzorLibrary
             {
                 azon = azon,
                 para = para,
