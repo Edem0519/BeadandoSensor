@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using Bead_2024;
 using System.Runtime.InteropServices;
-//using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Beadando_Szenzorhalozat
 {
@@ -57,7 +57,7 @@ namespace Beadando_Szenzorhalozat
         static List<Sensorok> list = new List<Sensorok>();
         static void Results()
         {
-            string filePath = "adatok.txt"; // Szöveges fájl elérési útja
+            string filePath = "sensor_adatok.txt"; // Szöveges fájl elérési útja
             if (File.Exists(filePath))
             {
                 var lines = File.ReadAllLines(filePath); // Beolvassa a fájl sorait
@@ -76,7 +76,7 @@ namespace Beadando_Szenzorhalozat
                         list.Add(new Sensorok(azon, homerseklet, paratartalom, folyoszint, tartalyszint));
 
                         //Adatok behelyezése az adatbázisba
-                        /*SzenzorLibrary sz = new SzenzorLibrary
+                        SzenzorLibrary sz = new SzenzorLibrary
                         {
                             azon = azon,
                             hom = homerseklet,
@@ -85,7 +85,7 @@ namespace Beadando_Szenzorhalozat
                             tartalyszint = tartalyszint
                         };
 
-                        Beszur(null, sz);*/
+                        Beszur(null, sz);
                     }
                 }
                 foreach (var sensorok in list) //ellenőrzés képpen
@@ -185,7 +185,7 @@ namespace Beadando_Szenzorhalozat
 
         }
 
-        /*public static void Adatbazis(string azon, int para, int hom, int folyoszint, int tartalyszint)//TZS
+        public static void Adatbazis(int azon, int para, int hom, int folyoszint, int tartalyszint)//TZS
         {
             string kapcsolodas = "server=localhost;database=szenzorhalozat;user=root;password=root;";
             using (var kapcsolo = new MySqlConnection(kapcsolodas))
@@ -202,13 +202,13 @@ namespace Beadando_Szenzorhalozat
                     parancsok.Parameters.AddWithValue("@tartalyszint", tartalyszint);
                 }
             }
-        }*/
+        }
         //NEM JÓ A GIT!!!!
         //Most már lehet jó lesz a git
-        /*public static void Beszur(object sender, SzenzorLibrary sz)
+        public static void Beszur(object sender, SzenzorLibrary sz)
         {
             szenzorlist.Add(sz);
             Adatbazis(sz.azon, sz.para, sz.hom, sz.folyoszint, sz.tartalyszint);
-        }*/
+        }
     }
 }
