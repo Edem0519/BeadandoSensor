@@ -204,6 +204,7 @@ namespace Beadando_Szenzorhalozat
             }
         }*/
         //NEM JÓ A GIT!!!!
+        //Most már lehet jó lesz a git
         /*public static void Beszur(object sender, SzenzorLibrary sz)
         {
             szenzorlist.Add(sz);
